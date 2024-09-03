@@ -6,3 +6,5 @@
 # The token is taken from app.terraform.io (Terraform Cloud Registry)
 # In Terraform Cloud Registry in the Variables Enter the AWS Access ID and Secret Key
 # Go to Actions->and Click on EKS.yml file to run the Workflow
+Connect GitHub to by API to->Terraform Cloud Registry to->AWS using access id and key
+Then connect AWS and Github using OpenConnect ID
