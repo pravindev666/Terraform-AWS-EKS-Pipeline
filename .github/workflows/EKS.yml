@@ -4,7 +4,7 @@ on:
 
 jobs:
   Plan:
-    uses: pravindev666/EKS_Terraform_Git-Actions/.github/workflows/aws_tf_plan.yml@main
+    uses: pravindev666/EKS_Terraform_Git_Actions/.github/workflows/aws_tf_plan.yml@main
     with:
       gh_environment: dev
     secrets:
@@ -12,7 +12,7 @@ jobs:
 
   Apply:
     needs: Plan
-    uses: pravindev666/EKS_Terraform_Git-Actions/.github/workflows/aws_tf_apply.yml@main
+    uses: pravindev666/EKS_Terraform_Git_Actions/.github/workflows/aws_tf_apply.yml@main
     with:
       gh_environment: dev
     secrets:
