@@ -87,6 +87,7 @@ flowchart TD
     style F fill:#FF9800,stroke:#333,color:#fff
     style I fill:#9C27B0,stroke:#333,color:#fff
     style K fill:#F44336,stroke:#333,color:#fff
+
 ---
 
 ### Architecture Components
