@@ -39,127 +39,55 @@ This project is ideal for DevOps Engineers, Cloud Architects, and SREs looking t
 ---
 
 ## Architecture
+---
+flowchart TD
+    %% === REPOSITORY ===
+    A[GitHub Repo<br>(Workflows, Terraform, Manifests)]
 
-```mermaid
-graph TB
-    subgraph "GitHub Repository"
-        A[GitHub Actions Workflow]
-        B[Terraform Configurations]
-        C[Application Manifests]
-    end
-    
-    subgraph "CI/CD Pipeline"
-        D[Workflow Trigger]
-        E[Terraform Init]
-        F[Terraform Plan]
-        G[Terraform Apply]
-        H[Deploy Applications]
-    end
-    
-    subgraph "AWS Cloud Infrastructure"
-        subgraph "VPC - Multi-AZ"
-            subgraph "Public Subnets"
-                I[NAT Gateway AZ-1]
-                J[NAT Gateway AZ-2]
-                K[Internet Gateway]
-                L[Bastion Host]
-            end
-            
-            subgraph "Private Subnets AZ-1"
-                M[EKS Worker Nodes]
-                N[Application Pods]
-            end
-            
-            subgraph "Private Subnets AZ-2"
-                O[EKS Worker Nodes]
-                P[Application Pods]
-            end
-        end
-        
-        subgraph "EKS Control Plane"
-            Q[Managed Master Nodes]
-            R[API Server]
-            S[etcd]
-        end
-        
-        subgraph "Node Groups"
-            T[On-Demand Instances]
-            U[Spot Instances]
-        end
-        
-        subgraph "AWS Services"
-            V[IAM Roles & Policies]
-            W[Security Groups]
-            X[Application Load Balancer]
-            Y[CloudWatch Logs]
-            Z[S3 - Terraform State]
-            AA[DynamoDB - State Lock]
-        end
-    end
-    
-    subgraph "Users & Access"
-        AB[kubectl CLI]
-        AC[AWS Console]
-        AD[Application Users]
-    end
-    
-    A --> D
+    %% === CI/CD PIPELINE ===
+    B[GitHub Actions<br>Trigger Workflow]
+    C[Terraform Init → Plan → Apply]
+    D[Deploy Apps to EKS]
+
+    %% === AWS INFRASTRUCTURE ===
+    E[VPC (Multi-AZ)]
+    F[EKS Control Plane]
+    G[EKS Worker Nodes]
+    H[App Pods]
+    I[Load Balancer]
+    J[CloudWatch Logs]
+    K[S3 (State) & DynamoDB (Lock)]
+
+    %% === USERS ===
+    L[kubectl CLI]
+    M[AWS Console]
+    N[App Users]
+
+    %% === FLOW ===
+    A --> B
+    B --> C
+    C --> D
     D --> E
     E --> F
     F --> G
     G --> H
-    
-    B --> E
-    C --> H
-    
-    G --> Q
-    G --> I
+    H --> I
+    I --> N
+    F --> J
     G --> J
-    G --> K
-    G --> L
-    G --> V
-    G --> W
-    G --> Z
-    G --> AA
-    
-    Q --> R
-    Q --> S
-    Q --> M
-    Q --> O
-    
-    M --> N
-    O --> P
-    
-    T --> M
-    T --> O
-    U --> M
-    U --> O
-    
-    K --> I
-    K --> J
-    I --> M
-    J --> O
-    
-    L -.SSH.-> M
-    L -.SSH.-> O
-    
-    X --> N
-    X --> P
-    
-    AD --> X
-    AB --> R
-    AC --> Q
-    
-    Q --> Y
-    M --> Y
-    O --> Y
-    
-    style A fill:#4CAF50
-    style G fill:#2196F3
-    style Q fill:#FF9800
-    style X fill:#9C27B0
-    style Z fill:#F44336
-```
+    C --> K
+
+    %% === ACCESS PATHS ===
+    L --> F
+    M --> F
+
+    %% === STYLING ===
+    style A fill:#4CAF50,stroke:#333,color:#fff
+    style C fill:#2196F3,stroke:#333,color:#fff
+    style F fill:#FF9800,stroke:#333,color:#fff
+    style I fill:#9C27B0,stroke:#333,color:#fff
+    style K fill:#F44336,stroke:#333,color:#fff
+---
 
 ### Architecture Components
 
