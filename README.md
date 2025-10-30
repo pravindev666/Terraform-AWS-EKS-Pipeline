@@ -39,7 +39,7 @@ This project is ideal for DevOps Engineers, Cloud Architects, and SREs looking t
 ---
 
 ## Architecture
----
+...
 flowchart TD
     %% === REPOSITORY ===
     A[GitHub Repo<br>(Workflows, Terraform, Manifests)]
@@ -88,7 +88,7 @@ flowchart TD
     style I fill:#9C27B0,stroke:#333,color:#fff
     style K fill:#F44336,stroke:#333,color:#fff
 
----
+...
 
 ### Architecture Components
 
