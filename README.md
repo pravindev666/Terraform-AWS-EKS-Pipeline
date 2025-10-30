@@ -4,11 +4,6 @@
 
 A production-ready Infrastructure as Code (IaC) solution for provisioning and managing Amazon Elastic Kubernetes Service (EKS) clusters using Terraform and automated CI/CD pipelines with GitHub Actions.
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/CloudOps-EKS-Pipeline)](https://github.com/yourusername/CloudOps-EKS-Pipeline)
-[![GitHub issues](https://img.shields.io/github/issues/yourusername/CloudOps-EKS-Pipeline)](https://github.com/yourusername/CloudOps-EKS-Pipeline/issues)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/CloudOps-EKS-Pipeline)](https://github.com/yourusername/CloudOps-EKS-Pipeline/stargazers)
-[![License](https://img.shields.io/github/license/yourusername/CloudOps-EKS-Pipeline)](https://github.com/yourusername/CloudOps-EKS-Pipeline/blob/main/LICENSE)
-
 ---
 
 ## 📋 Table of Contents
