@@ -21,7 +21,6 @@ A production-ready Infrastructure as Code (IaC) solution for provisioning and ma
 - [Monitoring & Observability](#-monitoring--observability)
 - [Cost Optimization](#-cost-optimization)
 - [Troubleshooting](#-troubleshooting)
-- [Learning Resources](#-learning-resources)
 
 ---
 
